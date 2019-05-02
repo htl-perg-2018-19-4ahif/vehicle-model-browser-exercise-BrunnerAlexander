@@ -1,0 +1,35 @@
+<br><br>
+Year: 
+<select [(ngModel)] = "yearFilter">
+  <option value=""></option>
+  <option *ngFor="let year of years">{{year}}</option>
+</select>
+
+Make:
+<select [(ngModel)] = "makeFilter">
+  <option value=""></option>
+  <option *ngFor="let make of makes">{{make}}</option>
+</select>
+
+<button type=button (click)="filter()">Filter</button>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Year</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Details</th>
+  </tr>
+  <tr *ngFor="let m of models">
+    <td>{{m.id}}</td>
+    <td>{{m.year}}</td>
+    <td>{{m.make}}</td>
+    <td>{{m.model}}</td>
+    <td>{{m.hasDetails}}</td>
+  </tr>
+</table>
+
+<br>
+<button type = button (click)="prevPage()">prev</button>
+<button type = button (click)="nextPage()">next</button>
